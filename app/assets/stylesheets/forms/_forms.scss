@@ -1,0 +1,28 @@
+form{
+  width: 500px;
+  margin: auto;
+
+    font-weight: 100;
+    letter-spacing: 5px;
+
+
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid black;
+      padding: 20px 10px;
+      box-shadow: none;
+
+}
+
+input[type = 'submit']{
+  background: $color5;
+  width: 100%;
+  font-size: 1.5em;
+  color: white;
+
+  &:hover{
+    background: $color1;
+    transition: 0.2s;
+    color: #343a40;
+  }
+}
