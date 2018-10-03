@@ -14,18 +14,24 @@
   <%= @user.dob %>
 </p>
 
-<p>
-  <strong>Blogs</strong>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+<%= link_to 'New Comment', new_blog_comment_path(@user)%>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Blogs</th>
+      <th>Comments</th>
+
 <% @user.blogs.each do |blog| %>
 <%= link_to blog do %>
-<%= blog.title %>
+<th><%= blog.title %></th>
 <% end %>
 <% end %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-<%= link_to 'New Comment', new_blog_comment_path(@user)%>
 
 <ul class = "list-group">
   <% @user.comments.each do |comment| %>
