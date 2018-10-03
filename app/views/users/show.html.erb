@@ -24,21 +24,26 @@
     <tr>
       <th>Blogs</th>
       <th>Comments</th>
+<th colspan="3"></th>
+</tr>
+</thead>
 
+<tbody>
 <% @user.blogs.each do |blog| %>
 <%= link_to blog do %>
-<th><%= blog.title %></th>
+<tr>
+
+<td><%= blog.title %></td>
 <% end %>
 <% end %>
-</p>
 
-
-<ul class = "list-group">
-  <% @user.comments.each do |comment| %>
-  <li class = "list-group-item">
-  <%= link_to edit_blog_comment_path(@user,comment) do %>
-  <%= comment.body %>
+ <% @user.comments.each do |comment| %>
+ <td class = "list-group-item">
+   <%= link_to edit_blog_comment_path(@user,comment) do %>
+ <%= comment.body %>
   <% end %>
-</li>
+</td>
   <% end %>
-</ul>
+</tr>
+</tbody>
+</table>
